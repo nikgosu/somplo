@@ -1,0 +1,35 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+  height: 100vh;
+  box-sizing: border-box;
+  padding: 20px 0;
+  & img {
+    height: 100%;
+  }
+  & .box {
+    height: 60%;
+    width: 30%;
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  background-color: #d9d9dc;
+  width: 30%;
+  height: 100vh;
+  padding: 30px;
+  & input {
+    margin-bottom: 10px;
+  }
+}

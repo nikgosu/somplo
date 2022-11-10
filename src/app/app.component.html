@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="content">
+    <div class="box">
+      <img [src]="animationsForm.value.img" alt="" >
+    </div>
+  </div>
+  <div class="form" [formGroup]="animationsForm">
+    <input type="file" (change)="getFile($event)">
+    <select formControlName="animation">
+      <option *ngFor="let animation of animationOptions">{{animation}}</option>
+    </select>
+  </div>
+</div>
