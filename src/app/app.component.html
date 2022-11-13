@@ -1,13 +1,65 @@
 <div class="container">
   <div class="content">
-    <div class="box">
-      <img [src]="animationsForm.value.img" alt="" >
+    <div style="height: 300px; width: 220px" id="box" [ngStyle]="{}">
+      <div
+        *ngIf="base64textString"
+        class="box"
+        [ngStyle]="{height: animationsForm.value.height + '%', width:
+          animationsForm.value.width + '%', left: animationsForm.value.horizontalPos + '%', top:
+          animationsForm.value.verticalPos + '%'
+        }"
+      >
+        <img
+          src="{{base64textString}}"
+          alt=""
+          height="300"
+          width="220"
+          [ngClass]="animationsForm.value.animation"
+        >
+      </div>
     </div>
   </div>
   <div class="form" [formGroup]="animationsForm">
-    <input type="file" (change)="getFile($event)">
+    <label for="file-upload" class="custom-file-upload">
+      File Upload
+    </label>
+    <input id="file-upload" type="file" (change)="getFile($event)">
     <select formControlName="animation">
       <option *ngFor="let animation of animationOptions">{{animation}}</option>
     </select>
+    <label for="Width">
+      Mask Width: <strong>{{animationsForm.value.width}}</strong>
+    </label>
+    <input type="range" formControlName="width" min="1" max="100" value="100" class="slider" id="Width">
+    <label for="Height">
+      Mask Height: <strong>{{animationsForm.value.height}}</strong>
+    </label>
+    <input type="range" formControlName="height" min="1" max="100" value="100" class="slider" id="Height">
+    <label for="Vertical">
+      Vertical Position: <strong>{{animationsForm.value.verticalPos}}</strong>
+    </label>
+    <input type="range" formControlName="verticalPos" min="-100" max="100" value="0" class="slider" id="Vertical">
+    <label for="Horizontal">
+      Horizontal Position: <strong>{{animationsForm.value.horizontalPos}}</strong>
+    </label>
+    <input type="range" formControlName="horizontalPos" min="-100" max="100" value="0" class="slider" id="Horizontal">
+    <div class="preview">
+      <div class="preview_box" [ngStyle]="{height: animationsForm.value.height + '%', width:
+      animationsForm.value.width + '%'}">
+        <img *ngIf="base64textString" src="{{base64textString}}" alt="" height="240" width="176">
+      </div>
+    </div>
+    <div class="position_controls">
+      <label for="horizontalInput">X:</label>
+      <input type="number" formControlName="horizontalPos" value="{{animationsForm.value.horizontalPos}}" id="horizontalInput">
+      <label for="verticalInput">Y:</label>
+      <input type="number" formControlName="verticalPos" value="{{animationsForm.value.verticalPos}}" id="verticalInput">
+    </div>
+    <button (click)="handleDownloadClick()">Generate Banner</button>
+  </div>
+  <div *ngIf="modal" class="modal" (click)="modal = !modal">
+    <div class="modal_content" (click)="$event.stopPropagation()">
+      <a [href]="fileUrl" download="myBanner.html">Download Banner</a>
+    </div>
   </div>
 </div>
