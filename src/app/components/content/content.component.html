@@ -1,5 +1,5 @@
 <div class="content">
-  <div style="height: 300px; width: 220px" id="box">
+  <div style="height: 400px; width: 320px" id="box">
     <div
       *ngIf="fileService.base64textString"
       class="box"
@@ -9,13 +9,14 @@
         left: formService.form.value['horizontalPos'] + '%',
         top: formService.form.value['verticalPos'] + '%'}"
       [ngClass]="formService.form.value.animation"
-      [@expandedPanel]="formService.form.value.animation"
+      [@myAnimations]="{value: formService.form.value.animation, params: {verticalPos:
+      formService.form.value['verticalPos'] + '%', horizontalPos: formService.form.value['horizontalPos'] + '%'}}"
     >
       <img
         src="{{fileService.base64textString}}"
         alt=""
-        height="300"
-        width="220"
+        height="400"
+        width="320"
       >
     </div>
   </div>

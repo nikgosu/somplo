@@ -3,7 +3,7 @@ import {DomSanitizer, SafeResourceUrl} from "@angular/platform-browser";
 import {FormGroup} from "@angular/forms";
 import {
   ANIMATION_FROM_BOTTOM_STYLES,
-  ANIMATION_FROM_LEFT_STYLES,
+  ANIMATION_FROM_LEFT_STYLES, ANIMATION_FROM_RIGHT_STYLES,
   ANIMATION_FROM_TOP_STYLES, ANIMATION_ROTATE_STYLES, ANIMATION_ROTATE_YZ_STYLES, WITHOUT_ANIMATION_STYLES
 } from "../../consts/template";
 import {FormService} from "./form.service";
@@ -104,7 +104,19 @@ export class FileService {
                 @keyframes from-left
                 {
                   0% {
-                    left: -300px
+                    left: -220px
+                  }
+                  100% {
+                    left: ${this.formService.form.value.horizontalPos}%;;
+                  }
+                }
+              `
+            : animationType === 'from-right' ?
+                    ANIMATION_FROM_RIGHT_STYLES + `
+                @keyframes from-right
+                {
+                  0% {
+                    left: 220px
                   }
                   100% {
                     left: ${this.formService.form.value.horizontalPos}%;;

@@ -8,19 +8,24 @@ import {animate, keyframes, style, transition, trigger} from "@angular/animation
   templateUrl: './content.component.html',
   styleUrls: ['./content.component.scss'],
   animations: [
-    trigger('expandedPanel', [
+    trigger('myAnimations', [
       transition('* => from-top', animate('2s ease', keyframes([
         style({top: '-300px'}),
-        style({top: 0})
-      ]))),
+        style({top: '{{verticalPos}}'})
+
+      ])),{params: {top: 0}}),
       transition('* => from-bottom', animate('2s ease', keyframes([
         style({top: '300px'}),
-        style({top: 0})
-      ]))),
+        style({top: '{{verticalPos}}'})
+      ])),{params: {top: 0}}),
       transition('* => from-left', animate('2s ease', keyframes([
         style({left: '-220px'}),
-        style({left: 0})
-      ]))),
+        style({left: '{{horizontalPos}}'})
+      ])),{params: {left: 0}}),
+      transition('* => from-right', animate('2s ease', keyframes([
+        style({left: '220px'}),
+        style({left: '{{horizontalPos}}'})
+      ])),{params: {left: 0}}),
       transition('* => rotate', animate('2s ease', keyframes([
         style({transform: 'rotateZ(360deg)'}),
       ]))),

@@ -1,7 +1,7 @@
 <div class="container">
-  <app-content></app-content>
-  <app-form [handleModalVisible]="handleModalVisible">
-    <app-preview ></app-preview>
+  <app-content class="content"></app-content>
+  <app-form class="form" [handleModalVisible]="handleModalVisible">
+    <app-preview></app-preview>
   </app-form>
   <app-modal [modal]="modal" (click)="modal = !modal"></app-modal>
 </div>

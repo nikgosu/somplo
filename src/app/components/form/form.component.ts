@@ -7,7 +7,8 @@ import {FormService} from "../../services/form.service";
   templateUrl: './form.component.html',
   styleUrls: ['./form.component.scss']
 })
-export class FormComponent implements OnInit {
+
+export class FormComponent implements OnInit{
 
   @Input() handleModalVisible!: () => void;
 
@@ -16,9 +17,38 @@ export class FormComponent implements OnInit {
     'from-top',
     'from-bottom',
     'from-left',
+    'from-right',
     'rotate',
     'rotateYZ'
   ]
+
+  sliderInputsProps = [
+    {
+      for: 'width',
+      min: 1,
+      max: 100,
+      value: 100,
+    },
+    {
+      for: 'height',
+      min: 1,
+      max: 100,
+      value: 100,
+    },
+    {
+      for: 'verticalPos',
+      min: -100,
+      max: 100,
+      value: 0,
+    },
+    {
+      for: 'horizontalPos',
+      min: -100,
+      max: 100,
+      value: 0,
+    },
+  ]
+
   constructor(public fileService: FileService, public formService: FormService) { }
 
   ngOnInit(): void {

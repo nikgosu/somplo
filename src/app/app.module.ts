@@ -20,7 +20,8 @@ import {BrowserAnimationsModule}  from '@angular/platform-browser/animations';
   imports: [
     BrowserModule,
     ReactiveFormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ReactiveFormsModule.withConfig({warnOnNgModelWithFormControl: 'never'})
   ],
   providers: [],
   bootstrap: [AppComponent]

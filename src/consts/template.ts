@@ -6,6 +6,17 @@ body {
   justify-content: center;
   align-items: center;
 }
+#box {
+    display: inline-block;
+    overflow: hidden;
+}
+.box {
+  position: relative;
+  height: 300px;
+  display: inline-block;
+  overflow: hidden;
+  width: 220px;
+}
 `
 
 export const ANIMATION_FROM_TOP_STYLES = `
@@ -111,7 +122,44 @@ body {
 @keyframes from-left
 {
   0% {
-    left: -300px
+    left: -220px
+  }
+  100% {
+    left: 0%;;
+  }
+}
+`
+
+export const ANIMATION_FROM_RIGHT_STYLES = `
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#box {
+    display: inline-block;
+    overflow: hidden;
+}
+.box {
+  position: relative;
+  height: 300px;
+  display: inline-block;
+  overflow: hidden;
+  width: 220px;
+}
+.from-right {
+  position: relative;
+  top: 0px;
+  left: 0px;
+  display: block;
+  -webkit-animation: from-right 2s ease;
+}
+@keyframes from-right
+{
+  0% {
+    left: 220px
   }
   100% {
     left: 0%;;
