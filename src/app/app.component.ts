@@ -1,7 +1,6 @@
 import {
   Component, OnInit,
 } from '@angular/core';
-import {FileService} from "./services/file.service";
 
 @Component({
   selector: 'app-root',
@@ -14,7 +13,7 @@ export class AppComponent implements OnInit{
   modal = false
 
 
-  constructor(public fileService: FileService) {
+  constructor() {
 
   }
 

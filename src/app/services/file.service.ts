@@ -23,7 +23,7 @@ export class FileService {
     let files = event.target.files
     let file = files[0]
 
-    animationsForm.patchValue({
+    file && animationsForm.patchValue({
       img: file.name})
 
     if(file && !animationsForm.invalid) {
