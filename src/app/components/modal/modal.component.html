@@ -1,0 +1,5 @@
+<div *ngIf="modal" class="modal">
+  <div class="modal_content" (click)="$event.stopPropagation()">
+    <a [href]="fileService.fileUrl" download="myBanner.html">Download Banner</a>
+  </div>
+</div>

@@ -1,0 +1,11 @@
+.preview {
+  height: 240px;
+  width: 176px;
+  margin-top: 10px;
+  & .preview_box {
+    height: 240px;
+    width: 176px;
+    display: inline-block;
+    overflow: hidden;
+  }
+}

@@ -1,0 +1,20 @@
+<div class="content">
+  <div style="height: 300px; width: 220px" id="box">
+    <div
+      *ngIf="fileService.base64textString"
+      class="box"
+      [ngStyle]="{height: formService.form.value.height + '%', width:
+          formService.form.value.width + '%', left: formService.form.value['horizontalPos'] + '%', top:
+          formService.form.value['verticalPos'] + '%'
+        }"
+    >
+      <img
+        src="{{fileService.base64textString}}"
+        alt=""
+        height="300"
+        width="220"
+        [ngClass]="formService.form.value.animation"
+      >
+    </div>
+  </div>
+</div>

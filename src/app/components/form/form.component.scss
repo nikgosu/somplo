@@ -1,0 +1,59 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  background-color: #d9d9dc;
+  align-items: center;
+  width: 30vw;
+  height: 100vh;
+  padding: 10px 10px 20px 10px;
+  position:relative;
+  & label {
+    font-size: 12px;
+  }
+  & label.custom-file-upload {
+    font-size: 16px;
+    border-radius: 16px;
+    background-color: #333131;
+    color: white;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+    margin-bottom: 8px;
+  }
+  & select {
+    margin-bottom: 10px;
+    border: none;
+    background-color: #333131;
+    color: white;
+    border-radius: 16px;
+    width: 200px;
+    height: 40px;
+    padding: 10px;
+  }
+  & button {
+    cursor: pointer;
+    background-color: #58c719;
+    margin-top: 20px;
+    border: none;
+    border-radius: 16px;
+    width: 200px;
+    height: 30px;
+    position:absolute;
+    bottom:1%;
+  }
+  & .position_controls {
+    display: flex;
+    flex-direction: row;
+    width: 50%;
+    justify-content: space-between;
+    margin-top: 10px;
+    & input {
+      width: 20px;
+      background-color: transparent;
+      border: none;
+      border-bottom: 1px solid black;
+      text-align: center;
+    }
+  }
+}

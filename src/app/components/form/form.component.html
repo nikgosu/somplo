@@ -1,0 +1,33 @@
+<div class="form" [formGroup]="formService.form">
+  <label for="file-upload" class="custom-file-upload">
+    File Upload
+  </label>
+  <input id="file-upload" type="file" (change)="fileService.getFile($event, formService.form)">
+  <select formControlName="animation">
+    <option *ngFor="let animation of animationOptions">{{animation}}</option>
+  </select>
+  <label for="Width">
+    Mask Width: <strong>{{formService.form.value.width}}</strong>
+  </label>
+  <input type="range" formControlName="width" min="1" max="100" value="100" class="slider" id="Width">
+  <label for="Height">
+    Mask Height: <strong>{{formService.form.value.height}}</strong>
+  </label>
+  <input type="range" formControlName="height" min="1" max="100" value="100" class="slider" id="Height">
+  <label for="Vertical">
+    Vertical Position: <strong>{{formService.form.value["verticalPos"]}}</strong>
+  </label>
+  <input type="range" formControlName="verticalPos" min="-100" max="100" value="0" class="slider" id="Vertical">
+  <label for="Horizontal">
+    Horizontal Position: <strong>{{formService.form.value["horizontalPos"]}}</strong>
+  </label>
+  <input type="range" formControlName="horizontalPos" min="-100" max="100" value="0" class="slider" id="Horizontal">
+  <ng-content></ng-content>
+  <div class="position_controls">
+    <label for="horizontalInput">X:</label>
+    <input type="number" formControlName="horizontalPos" value="{{formService.form.value['horizontalPos']}}" id="horizontalInput">
+    <label for="verticalInput">Y:</label>
+    <input type="number" formControlName="verticalPos" value="{{formService.form.value['verticalPos']}}" id="verticalInput">
+  </div>
+  <button (click)="onDownloadClick()">Generate Banner</button>
+</div>
