@@ -1,5 +1,6 @@
 <div class="form" [formGroup]="formService.form">
   <div class="from_content">
+    <span *ngIf="formService.form.invalid">INVALID FILE</span>
     <label for="file-upload" class="custom-file-upload">
       File Upload
     </label>

@@ -23,7 +23,10 @@ export class FileService {
     let files = event.target.files
     let file = files[0]
 
-    if(file) {
+    animationsForm.patchValue({
+      img: file.name})
+
+    if(file && !animationsForm.invalid) {
       reader.readAsDataURL(file)
 
       reader.onload = (_event: ProgressEvent) => {
@@ -34,8 +37,7 @@ export class FileService {
           },
           'image/png'
         )
-        animationsForm.patchValue({
-          img: reader.result})
+
       }
     }
   }

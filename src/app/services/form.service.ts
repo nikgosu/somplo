@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {FormControl, FormGroup} from "@angular/forms";
+import {FormControl, FormGroup, Validators} from "@angular/forms";
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +14,9 @@ export class FormService {
 
   private _createForm () {
     this.form = new FormGroup({
-      img: new FormControl(),
+      img: new FormControl('', [
+        Validators.pattern(/.+\.(?:(jpg|gif|png|jpeg))/gi)
+      ]),
       animation: new FormControl(''),
       width: new FormControl(100),
       height: new FormControl(100),

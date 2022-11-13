@@ -59,4 +59,8 @@ export class FormComponent implements OnInit{
     animationElement && this.fileService.createBlob(animationElement)
     this.handleModalVisible()
   }
+
+  get img () {
+    return this.formService.form.get('img')
+  }
 }
