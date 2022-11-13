@@ -33,9 +33,7 @@
         margin-bottom: 10px;
       }
     }
-    & label {
-      font-size: 20px;
-    }
+
     & label.custom-file-upload {
       border-radius: 16px;
       background-color: #333131;
@@ -90,5 +88,11 @@
     font-size: 24px;
     padding: 8px 16px;
     word-wrap: anywhere;
+  }
+  & input {
+    width: 70%;
+  }
+  & label {
+    font-size: 20px;
   }
 }

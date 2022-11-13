@@ -22,6 +22,7 @@ export class FormService {
       height: new FormControl(100),
       verticalPos: new FormControl(0),
       horizontalPos: new FormControl(0),
+      imageSize: new FormControl(100),
     })
   }
 }

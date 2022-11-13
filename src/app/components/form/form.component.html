@@ -23,7 +23,17 @@
     </div>
     <ng-content></ng-content>
   </div>
+  <label for="imageSize">Image size: {{formService.form.value['imageSize']}}%</label>
+  <input
+    type="range"
+    formControlName="imageSize"
+    value="{{formService.form.value['imageSize']}}"
+    id="imageSize"
+    min="0"
+    max="200"
+  >
   <div class="position_controls">
+
     <label for="horizontalInput">X:</label>
     <input type="number" formControlName="horizontalPos" value="{{formService.form.value['horizontalPos']}}" id="horizontalInput">
     <label for="verticalInput">Y:</label>

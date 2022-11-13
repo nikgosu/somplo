@@ -1,7 +1,15 @@
 <div class="preview">
   <div class="preview_box" [ngStyle]="{height: formService.form.value.height + '%', width:
       formService.form.value.width + '%'}">
-    <img *ngIf="fileService.base64textString" src="{{fileService.base64textString}}" alt="" height="240"
-         width="176">
+    <img
+      *ngIf="fileService.base64textString"
+      src="{{fileService.base64textString}}"
+      alt=""
+      height="240"
+      width="176"
+      [ngStyle]="{
+        height: formService.form.value['imageSize'] + '%',
+        width: formService.form.value['imageSize'] + '%'}"
+    >
   </div>
 </div>
