@@ -19,13 +19,11 @@ export class AppComponent implements OnInit{
   }
 
 
-  handleDownloadClick () {
-    let animationElement = document.getElementById('box')
-    animationElement && this.fileService.createBlob(animationElement)
+  handleModalVisible () {
     this.modal = !this.modal
   }
 
   ngOnInit(): void {
-    this.handleDownloadClick = this.handleDownloadClick.bind(this);
+    this.handleModalVisible = this.handleModalVisible.bind(this);
   }
 }

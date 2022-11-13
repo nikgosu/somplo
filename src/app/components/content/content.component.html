@@ -3,17 +3,19 @@
     <div
       *ngIf="fileService.base64textString"
       class="box"
-      [ngStyle]="{height: formService.form.value.height + '%', width:
-          formService.form.value.width + '%', left: formService.form.value['horizontalPos'] + '%', top:
-          formService.form.value['verticalPos'] + '%'
-        }"
+      [ngStyle]="{
+        height: formService.form.value.height + '%',
+        width: formService.form.value.width + '%',
+        left: formService.form.value['horizontalPos'] + '%',
+        top: formService.form.value['verticalPos'] + '%'}"
+      [ngClass]="formService.form.value.animation"
+      [@expandedPanel]="formService.form.value.animation"
     >
       <img
         src="{{fileService.base64textString}}"
         alt=""
         height="300"
         width="220"
-        [ngClass]="formService.form.value.animation"
       >
     </div>
   </div>

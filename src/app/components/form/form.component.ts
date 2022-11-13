@@ -9,18 +9,24 @@ import {FormService} from "../../services/form.service";
 })
 export class FormComponent implements OnInit {
 
-  @Input() onDownloadClick!: () => void;
+  @Input() handleModalVisible!: () => void;
 
   animationOptions = [
-    'Select animation',
+    'select animation',
     'from-top',
     'from-bottom',
     'from-left',
-    'rotate'
+    'rotate',
+    'rotateYZ'
   ]
   constructor(public fileService: FileService, public formService: FormService) { }
 
   ngOnInit(): void {
   }
 
+  onGenerateClick () {
+    let animationElement = document.getElementById('box')
+    animationElement && this.fileService.createBlob(animationElement)
+    this.handleModalVisible()
+  }
 }
