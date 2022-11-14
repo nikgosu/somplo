@@ -9,3 +9,18 @@
     overflow: hidden;
   }
 }
+
+@media (min-width:320px)  {
+  .preview {
+    height: 150px;
+    width: 100px;
+  }
+  .preview_box {
+    height: 150px;
+    width: 100px;
+  }
+  img {
+    height: 150px;
+    width: 100px;
+  }
+}

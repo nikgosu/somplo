@@ -22,3 +22,17 @@
   }
 }
 
+@media (min-width:320px)  {
+  #box {
+    width: 275px;
+    height: 500px;
+  }
+  .box {
+    width: 275px;
+    height: 500px;
+  }
+  img {
+    width: 275px;
+    height: 500px;
+  }
+}

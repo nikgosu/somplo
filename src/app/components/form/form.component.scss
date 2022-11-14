@@ -40,11 +40,12 @@
       background-color: #333131;
       color: white;
       display: inline-block;
-      padding: 10px 26px;
+      padding: 10px;
       text-align: center;
       cursor: pointer;
-      font-size: 24px;
+      font-size: calc(1em + 0.5vw);
       margin-bottom: 20px;
+      min-width: 80px;
       width: 25%;
     }
     & select {
@@ -85,8 +86,9 @@
     vertical-align: bottom;
     border: none;
     border-radius: 16px;
-    min-width: 180px;
-    font-size: 24px;
+    min-width: 85px;
+    width: 35%;
+    font-size: calc(1em + 0.5vw);
     padding: 8px 16px;
     word-wrap: anywhere;
   }
@@ -96,4 +98,7 @@
   & label {
     font-size: 20px;
   }
+}
+
+@media (min-width:320px)  {
 }
