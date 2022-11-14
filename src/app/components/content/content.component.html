@@ -1,5 +1,5 @@
 <div class="content">
-  <div style="height: 400px; width: 320px" id="box">
+  <div style="height: 500px; width: 420px" id="box">
     <div
       *ngIf="fileService.base64textString"
       class="box"
@@ -15,8 +15,8 @@
       <img
         src="{{fileService.base64textString}}"
         alt=""
-        height="400"
-        width="320"
+        height="500"
+        width="420"
         [ngStyle]="{
           transform: 'scale('+formService.form.value['imageSize'] / 100 +')'
         }"
