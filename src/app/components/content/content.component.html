@@ -18,8 +18,8 @@
         height="400"
         width="320"
         [ngStyle]="{
-        height: formService.form.value['imageSize'] + '%',
-        width: formService.form.value['imageSize'] + '%'}"
+          transform: 'scale('+formService.form.value['imageSize'] / 100 +')'
+        }"
       >
     </div>
   </div>

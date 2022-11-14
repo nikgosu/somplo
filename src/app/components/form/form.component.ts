@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, DoCheck, Input, OnInit} from '@angular/core';
 import {FileService} from "../../services/file.service";
 import {FormService} from "../../services/form.service";
 
@@ -8,7 +8,7 @@ import {FormService} from "../../services/form.service";
   styleUrls: ['./form.component.scss']
 })
 
-export class FormComponent implements OnInit{
+export class FormComponent implements OnInit, DoCheck{
 
   @Input() handleModalVisible!: () => void;
 
@@ -62,5 +62,9 @@ export class FormComponent implements OnInit{
 
   get img () {
     return this.formService.form.get('img')
+  }
+
+  ngDoCheck(): void {
+    console.log(this.formService.form.value)
   }
 }
