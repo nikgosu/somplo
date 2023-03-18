@@ -14,6 +14,7 @@ export class FormService {
 
   private _createForm () {
     this.form = new FormGroup({
+      name: new FormControl(''),
       img: new FormControl('', [
         Validators.pattern(/.+\.(?:(jpg|gif|png|jpeg))/gi)
       ]),

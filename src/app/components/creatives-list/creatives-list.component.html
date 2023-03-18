@@ -1,0 +1,8 @@
+<div class="container">
+  <h1>Smoplo creatives</h1>
+  <div class="creatives-container">
+    <div *ngFor="let creative of creatives$ | async">
+      <h2>{{creative.name}}</h2>
+    </div>
+  </div>
+</div>

@@ -5,6 +5,7 @@
       File Upload
     </label>
     <input id="file-upload" type="file" (change)="fileService.getFile($event, formService.form)">
+    <input type="text" formControlName="name">
     <select formControlName="animation">
       <option *ngFor="let animation of animationOptions">{{animation}}</option>
     </select>
